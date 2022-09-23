@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MS-Leeffice</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- 파비콘 넣는 방법입니다. 홈페이지에 삽입한 로고를 파비콘으로 넣었습니다. -->
+        <link rel="shortcut icon" type="image/x-icon" href="logo_msleeffice.png">
+    </head>
+    <body>
+            <!-- nav
+                div 태그로 블록을 잡아도 되지만, 시멘틱 html을 사용하는 것이 seo에 더욱 좋다는
+                이야기를 듣고, navigation을 의미하는 nav태그를 사용했습니다.
+                설명 목록을 나타내는 dl, dt 요소를 활용하여 제작함
+                -> 순서가 있는 ol, 순서가 없는 목록 ul 요소와 비슷 한 기능인데, 용도가 조금 다릅니다.
+                dt요소에 '로고'와 '메뉴'바를 넣었습니다. 
+                특히 메뉴바가 들어갈 dt요소 자리에 dl 요소를 넣고 다시 그 하위에 dt요소를 넣어 구조를 잡았습니다.
+                그리고 이 페이지에 포함된 내용이 적어 1page로 제작했고, 네비게이션 바의 항목을 누르면 해당 내용으로
+                페이지 스크롤이 이동하도록 구현했습니다.
+                구현하는 법은 네비게이션으로 이동 시키고 싶은 내용의 위치를 미리 id 선택자로 잡아놓고
+                a태그 href 속성 값에 id 선택자를 넣어주면 됩니다.
+             -->
+            <nav>
+                <dl class="section_nav">
+                    <dt class="logo">
+                        <a href="index.html"><img src="logo_msleeffice.png"></a>
+                    </dt>
+                    <dl class="menu">
+                            <dt>01. <a href="#about">ABOUT</a></dt>
+                            <dt>02. <a href="#skill">EXPERENCE & SKILL</a></dt>
+                            <dt>03. <a href=#contact>CONTACT</a></dt>
+                    </dl>
+                    </div>
+                </dl>
+            </nav>
+
+            <!-- intro
+                인트로는 개인적으로 p 태그에 스타일을 직접 심은 것이 마음에 걸립니다.
+                html 태그는 태그 자체에 의미가 있는 반면, 스타일 속성은 전혀 의미가 없는 내용이므로
+                html 태그와 스타일 속성은 따로 관리하는 것이 바람직 하다고 들었습니다.
+                하지만 각 p요소에 들어간 내용의 디자인이 모두 달라서 어떻게 처리하면 좋을지 고민입니다.
+                여기도 시멘틱 html로 article을 썼습니다.
+                만들고 보니 개인적으로 div태그를 section 태그로 바꾸고 싶네요.
+            -->
+            <div class="section_intro">
+                <article class="intro">
+                    <p style="color:#31eecb;font-size:inherit">Hi, my name is</p>
+                    <h1 style="color:#c4cef1">Lee Myeong Seok.</h1>
+                    <p>I wanna work as a backend developer.</p>
+                    <p style="font-size:15px;">4년차 디지털 마케터에서 백앤드 개발자로 성장하기 위해, 현재 wecode 부트캠프에서 고군분투 중입니다.</p>
+                </article>
+            </div>
+
+            <!-- about
+                제 사진과 함께 저의 신상 등 간략한 정보를 넣었습니다.
+                추가설명 드릴 부분은 sns아이콘 삽입한 부분인데요.
+                target="_blank" 속성은 sns 아이콘 클릭 시 sns페이지가 새 창으로 열리도록 하는 속성이구요
+                a태그 안에 title 속성을 넣으면, 아이콘에 마우스 커서를 가져다 놓을 때, 속성 뒤에 적은 글자가 보이게 됩니다. 
+            -->
+            <article class="section_about">
+                <div id="about">
+                    <h2>ABOUT</h2>
+                    <br>
+                    <img src="image.png" width="300px">
+                    <dl>
+                        <dt>이름 : 이명석</dt>
+                        <dt>성별 : 남</dt>
+                        <dt>생년월일 : 92.4.19</dt>
+                        <dt>학력 : 충남대학교 경제학과 졸업</dt>
+                        <dt>교육 : (~ing) <a href="https://wecode.co.kr/">wecode</a> 웹개발자 양성과정</dt>
+                        <dt>email : yhkyhk92@gmail.com</dt>
+                        <dt>SNS : <a href="https://www.instagram.com/ms_leeffice/" target="_blank" title="저의 개인 일상이 궁금하시다면.. click plz!"><img src="logo_insta.png"></a>
+                        <a href="https://growth-msleeffice.tistory.com/" target="_blank" title="저의 개발 블로그가 궁금하시다면.. click plz!"><img src="logo_tistory.png"></a>
+                        <a href="https://www.linkedin.com/in/%EB%AA%85%EC%84%9D-%EC%9D%B4-536676243/" target="_blank" title="저를 채용하시길 원하신다면.. click plz!"><img src="logo_linkedin.png"></a></dt> 
+                    </dl>
+                </div>
+            </article>
+            
+            <!-- experence & skill
+                ex, skill 부분은  dt, dl 요소를 활용했습니다.
+            -->
+            <article class="section_skill">
+                <div id="skill">
+                    <h2>EXPERENCE & SKILL</h2>
+                    <h3>Developer (~ing)</h3>
+                        <dl>
+                            <dt>HTML 5</dt>
+                            <dt>CSS</dt>
+                            <dt>JavaScript</dt>
+                            <dt>Node.js</dt>
+                            <dt>MySQL</dt>
+                            <dt>AWS</dt>
+                        </dl>
+                    <h3>Marketer (2019.05~2022.07)</h3>
+                        <dl>
+                            <dt>Marketing strategy</dt>
+                            <dt>SNS Marketing</dt>
+                            <dt>CRM Marketing</dt>
+                            <dt>Google Analitics</dt>
+                            <dt>Google Tag manager</dt>
+                            <dt>Adobe Photoshop / Illustrator</dt>
+                        </dl>
+                </div>
+        </article>
+
+            <!-- contact
+                문의를 받을 수 있는 기능을 구현하고자 했습니다.
+                이름과 메일, 문의내용을 적어 제출하면 제 메일로 그 내용이 자동발송 되게 하는 것이죠.
+                이 내용은 JS로 구현 가능한? 혹은 서드파티를 활용해야 구현 가능한 것 같아서 아직 구현하지는 않았습니다.
+                활용한 요소는 form, lable, input, textarea, button 입니다.
+            -->
+            <article class="section_contact">
+                <div id="contact">
+                    <h2>CONTACT</h2>
+                    <form method="POST" action="/store-data">
+                        <div>
+                            <lable for="name">성함 : </lable>
+                            <input type="text"  placeholder="본명을 적어주세요" name="name">
+                        </div>
+                        <div>
+                            <lable for="email">e-mail : </lable>
+                            <input type="text"  placeholder="회신 받을 e-mail을 정확히 적어주세요" name="email">
+                        </div>
+                        <div>
+                            <lable for="message">내용 : </lable>
+                            <textarea name="message" cols="100" rows="10" placeholder="자세한 내용을 적어주세요" ></textarea>
+                        </div>
+                        <div>
+                            <input type="button" oncdtck="mailSend();" value="제출하기">
+                        </div>
+                        <div style="display:none;" id="thankyou_message">
+                            <h3><em>연락해주셔서 감사합니다.</em>
+                            24시간이내에 회신드리도록 하겠습니다. :)</h3>
+                        </div>   
+                    </form>       
+                </div>
+            </article>
+
+    </body>
+</html>
