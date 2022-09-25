@@ -1,0 +1,192 @@
+           /*
+           바디 부분은 배경색과 글꼴 설정했구요.
+           네비게이션 설정 때문에 바디의 상단 margin은 0으로, 하단은 모든 스크롤을 내렸을 때
+           네비게이션 높이 만큼 여백을 주는게 균형감 있겠다 싶어서 네비게이션 높이만큼 동일하게
+           100px로 놨습니다.
+           그리고 네비게이션 외에 전체 영역을 가운데 정렬하고자 text-align 썼구요
+           네비게이션을 화면 스크롤 내릴때도 고정값으로 두었는데, 그 때 body안에 있는 내용이
+           네비게이션 영역을 침범해서 위로 올라오더라구요. 그래서 바디에 패딩값을 네비게이션 높이 만큼
+           주어서 그 문제 없앴습니다.
+           */
+           body {
+                background-color:#0A1829;
+                color:#7c86a5;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size:20px;
+                margin:0 40px 100px 40px;
+                text-align:center;
+                padding-top:100px;
+            }
+
+            /*
+            a 태그 디폴트 설정이 안예뻐서 바꿨어요.
+            */
+
+            a {
+                text-decoration:none;
+                color:#7c86a5;
+            }
+
+            /* nav
+            이번 작업에서 가장 힘들었던 네비게이션 입니다.
+            네비게이션 만드는 방법이 inline-block, float 등의 요소를 활용하는 방법으로 여러가지가 있더라구요.
+            저는 일단 두 요소 짬뽕해서 만들었습니다.
+            중요한 것은, 네비게이션 블록에도 배경색을 넣었다는 건데요. 배경색을 안넣으면 네비게이션 블록 자체가
+            투명하게 기본설정이 되어있어서 네비게이션 뒤로 본문 내용이 겹쳐보여서 지저분해 보였어요.
+            그래서 body 배경색과 동일하게 네비게이션 배경을 주었더니 네비게이션 뒤로 본문 내용이 겹쳐보이는
+            문제를 해결할 수 있었습니다.
+            그리고 스크롤을 내릴때 역동감을 주려고 네비게이션 바에 투명도(opacity) 속성도 넣었습니다.
+            투명도 값은 0~1로 넣을 수 있는 것 같아요.
+            */
+
+            nav {
+                position:fixed;
+                top:0;
+                left:0;
+                right:0;
+                height:100px;
+                background-color: #0A1829;
+                opacity:0.8;
+            }
+            
+            /* section_nav -> <dl>
+            그리고 네비게이션 영역 하단에 실선을 넣고 싶어서 nav태그에
+            border값 넣었는데 body에서 설정한 마진 값 적용이 안되더라구요. 왤까요..?
+            그래서 dl 요소에 css 넣었습니다.
+            높이는 앞에 nav 태그에서 100px 넣었으니까 여기부터는 %로 적용했습니다.
+            dl요소도 margin 값을 설정 안하면 body에서 설정한 사이드 마진 값 적용이 안되서
+            바디와 동일하게 마진 값 주었습니다.
+            */
+            .section_nav {
+                border-bottom:1px solid #c4cef1;
+                margin:auto 40px;
+                height:100%;
+            }
+            
+            /* logo -> <dt>
+            로고를 dt 요소로 첫번째 목록에 넣었었죠. 근데, 네비게이션 영역에서
+            로고를 왼쪽으로 정렬시키고 싶어서 float 속성 사용했습니다.
+            영역의 높이를 설정해두니까 로고 이미지가 해당 영역에 맞게 축소되서 들어가네요.
+            */
+            .logo {
+                float:left;
+            } 
+
+            /* menu -> <dl>
+            목록(dt)가 들어갈 위치에 dl을 다시 넣었다고 했습니다. 그러면 네비게이션 메뉴로 넣을 내용을
+            목록으로 넣을 수 있으니까요. 그런데 문제는 목록을 만들면 위에서 아래로 나열됩니다.
+            저는 네비게이션 메뉴를 우측으로 정렬시키고 싶었어요. 그래서 마찬가지로 float속성을 사용합니다.
+            그리고 마진 값을 주었어요. 마진값을 안주면 저 목록이 가로로 배치는 되는데 네비게이션 영역에서
+            위에 딱 붙어서 정렬이 되거든요. 그래서 네비게이션 영역에 중간쯤에 위치하도록 마진값을 넣었습니다.
+            */
+            .menu {
+                float:right;
+                margin:38px 20px 38px auto;
+            }
+
+            /* menu dt
+            위에서 float 값을 주면, 목록이 네비게이션 영역에서 우측 정렬 됩니다. 하지만 목록안에 있는
+            리스트 값들은 block요소로 되어 있어서 한줄에 하나씩 3줄로 나열되어요.
+            그래서 display 값을 inline-block 으로 바꿨습니다.(inline도 됩니다!)
+            dt에 적히는 기본 글자 색은 따로 지정하고, about, ex&skill, contact 글자는 a태그 글자색
+            앞에서 정한대로 나타나게 해서 꾸몄구요.
+            메뉴 사이에 간격을 좀 주고 싶어서 마진 값을 왼쪽에 좀 주었습니다.
+            그리고 글자 크기는 20px은 좀 커보여서 small사이즈로 바꿨습니다.            
+            */
+            .menu dt {
+                color:#31eecb;
+                display:inline-block;
+                margin-left:30px;
+                font-size:small;
+            }
+
+            /* 본문내용 기본설정
+            일단, 본문 내용을 body 설정할 때 가운데로 정렬시켰죠.
+            하지만 intro(article 태그)는 블록 요소라서 가운데 정렬이 먹히지가 않았어요.
+            물론 너비 값을 직접 정하면 되겠지만, 어느정도가 적당할지 감이 안왔습니다.
+            그래서 inline-block값을 넣었습니다. 그러면 블록이 article태그 안에 있는 p, h1 태그
+            내용의 길이에 맞게 너비값을 자동으로 잡아주더라구요.
+            다른 id에도 이 display 속성 값이 적용될 필요는 없지만,
+            마진 값을 모두 동일하게 주기위해 편의상 그룹 선택자로 묶었습니다.
+            */
+            .intro, #about, #skill, #contact {
+                margin:40px auto 40px auto;
+                display:inline-block;
+            }
+
+            /* intro
+            다른 본문과 정렬 방법이 intro는 다릅니다.
+            내용 블록은 가운데 정렬 되어있지만 블록 안에 있는 텍스트는 모두 왼쪽 정렬 되어있지요.
+            그래서 텍스트 블록을 잡고있는 p와 h1태그의 text-aling속성 값을 왼쪽으로 주었습니다.
+            */
+            .intro p, .intro h1 {
+                font-size:40px;
+                font-weight:bold;
+                margin-top:10px;
+                margin-bottom:10px;
+                text-align:left;
+            }
+
+            /* about, ex&skill, contact 소제목
+            소제목에는 포인트 색상을 주고 텍스트 위 아래로 선을 넣고 싶었습니다.
+            그리고 선은 텍스트 길이만큼 넣고 싶었구요.
+            그래서 아래와 같이 설정했습니다.
+            */
+            h2 {
+                margin:40px auto;
+                color:#31eecb;
+                border-bottom:4px solid #c4cef1;
+                border-top:4px solid #c4cef1;
+                padding:10px 0;
+                display:inline-block;
+            }
+            
+            /* article에 있는 내용 기본 설정
+            글자들의 간격을 가독성 좋게 1.7로 설정했어요.
+            */
+            #about, #skill, #contact dt {
+                line-height:1.7;
+            }
+            
+            /* about 프로필 사진 줄였습니다.*/
+            #about dt img {
+                width:30px;
+            }
+            
+            /* ex&skill 소제목 디자인 바꿨습니다.*/
+            #skill h3 {
+                color:#c4cef1;
+                margin:auto;
+            }
+
+            /* contact 
+            -> 추가 수정해야 할 사항 : contact 내용 줄 정렬, email input 정렬
+            선택자를 사용하는 방법 하나 적용해봤습니다.
+            선택자를 작성하는 방식이 굉장히 많더라구요.
+            선택자만 잘 활용해도 작성되는 코드 많이 줄이겠다는 생각이 들었습니다.
+            */
+           
+            #contact input[type="text"] {
+                width:300px;
+                height:50px;
+                margin:20px;
+                text-align:center;
+                display:inline-block;
+            }
+
+            #contact textarea {
+                width:300px;
+                margin:20px;
+                text-align:center;   
+                display:inline-block;          
+            }
+
+            #contact input[type="button"] {
+                width:100px;
+                height:30px;
+                color:#0A1829;
+                font-weight:bold;
+                background-color: #31eecb;
+                border-color: #31eecb;
+            }
+
