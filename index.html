@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>MS-Leeffice</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="app.js"></script>        
         <!-- 파비콘 넣는 방법입니다. 홈페이지에 삽입한 로고를 파비콘으로 넣었습니다. -->
         <link rel="shortcut icon" type="image/x-icon" href="logo_msleeffice.png" />
     </head>
@@ -112,7 +113,7 @@
             <article class="section_contact">
                 <div id="contact">
                     <h2>CONTACT</h2>
-                    <form method="POST" action="/store-data"></form>
+                    <form method="POST" action="https://script.google.com/macros/s/AKfycbwXwjFyv9-viHa_JUk6cwwj7tn2WS5jZoYrsfE2Kw/exec"></form>
                         <div>
                             <lable for="name">성함 : </lable>
                             <input type="text"  placeholder="본명을 적어주세요" name="name">
@@ -126,9 +127,9 @@
                             <textarea name="message" cols="100" rows="10" placeholder="자세한 내용을 적어주세요" ></textarea>
                         </div>
                         <div>
-                            <input type="button" oncdtck="mailSend();" value="제출하기">
+                            <input type="submit" oncdtck="mailSend();" value="제출하기">
                         </div>
-                        <div style="display:none;" id="thankyou_message">
+                        <div style="display:contents" id="thankyou_message">
                             <h3><em>연락해주셔서 감사합니다.</em>
                             24시간이내에 회신드리도록 하겠습니다. :)</h3>
                         </div>   
