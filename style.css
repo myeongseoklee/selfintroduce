@@ -166,7 +166,7 @@
             선택자만 잘 활용해도 작성되는 코드 많이 줄이겠다는 생각이 들었습니다.
             */
            
-            #contact input[type="text"] {
+            #contact input {
                 width:300px;
                 height:50px;
                 margin:20px;
@@ -181,7 +181,7 @@
                 display:inline-block;          
             }
 
-            #contact input[type="button"] {
+            #contact button[type="submit"] {
                 width:100px;
                 height:30px;
                 color:#0A1829;

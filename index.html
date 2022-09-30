@@ -110,32 +110,59 @@
                 이 내용은 JS로 구현 가능한? 혹은 서드파티를 활용해야 구현 가능한 것 같아서 아직 구현하지는 않았습니다.
                 활용한 요소는 form, lable, input, textarea, button 입니다.
             -->
-            <article class="section_contact">
+            <section class="email-me">
+                <div id="contact">
+                <h2 class="title-section">CONTACT</h2>
+                <form class="gform" action="https://script.google.com/macros/s/AKfycbx7LM8SSdlh9-8Pb6YHK3Z4OG0tD4Wq4gksK8tAFNXL2n046WU2/exec" data-email="yhkyhk92@gmail.com" method="POST">
+                    <div class="box-input">
+                      <label for="userName">성함 : </label>
+                      <input type="text" id="userName" name="name" placeholder="본명을 적어주세요" required>
+                    </div>
+                    <div class="box-input">
+                      <label for="userEmail">Email : </label>
+                      <input type="email" id="userEmail" name="email" placeholder="회신 받을 e-mail을 정확히 적어주세요" required>
+                    </div>
+                    <div class="box-input">
+                      <label for="userMessage">내용 : </label>
+                      <textarea name="message" id="userMessage"cols="100" rows="10" placeholder="자세한 내용을 적어주세요" required></textarea>
+                    </div>
+                    <div class="box-input">
+                      <button type="submit" class="btn-send">제출하기</button>
+                    </div>
+                    <div style="display:none" id="thankyou_message">
+                        <p><h3>연락해주셔서 감사합니다. 24시간이내에 회신드리도록 하겠습니다.</h3></p>
+                    </div>   
+                </form>
+                </div>
+            </section>
+
+            <!-- <article class="section_contact">
                 <div id="contact">
                     <h2>CONTACT</h2>
-                    <form method="POST" action="https://script.google.com/macros/s/AKfycbwXwjFyv9-viHa_JUk6cwwj7tn2WS5jZoYrsfE2Kw/exec"></form>
+                    <form class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbx7LM8SSdlh9-8Pb6YHK3Z4OG0tD4Wq4gksK8tAFNXL2n046WU2/exec" data-email="yhkyhk92@gmail.com"></form>
                         <div>
                             <lable for="name">성함 : </lable>
-                            <input type="text"  placeholder="본명을 적어주세요" name="name">
+                            <input type="text"  placeholder="본명을 적어주세요" name="name" required>
                         </div>
                         <div>
                             <lable for="email">e-mail : </lable>
-                            <input type="text"  placeholder="회신 받을 e-mail을 정확히 적어주세요" name="email">
+                            <input type="text" placeholder="회신 받을 e-mail을 정확히 적어주세요" name="email" required>
                         </div>
                         <div>
                             <lable for="message">내용 : </lable>
-                            <textarea name="message" cols="100" rows="10" placeholder="자세한 내용을 적어주세요" ></textarea>
+                            <textarea name="message" cols="100" rows="10" placeholder="자세한 내용을 적어주세요" required ></textarea>
                         </div>
                         <div>
-                            <input type="submit" oncdtck="mailSend();" value="제출하기">
+                            <button type="submit"> 제출하기 </button>
                         </div>
-                        <div style="display:contents" id="thankyou_message">
+                        <div style="display:none" id="thankyou_message">
                             <h3><em>연락해주셔서 감사합니다.</em>
                             24시간이내에 회신드리도록 하겠습니다. :)</h3>
                         </div>   
                     </form>       
                 </div>
-            </article>
+            </article> -->
 
+            <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
     </body>
 </html>
